@@ -10,5 +10,6 @@ class Proposal < ApplicationRecord
   validates :answer1, presence: true
   validates :answer2, presence: true
   validates :detailed_description, presence: true
-
+  validates :description, presence: true
+  validates :privacy, presence: true
 end

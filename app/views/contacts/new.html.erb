@@ -1,0 +1,96 @@
+<!-- Page Heading/Breadcrumbs -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Contatti
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="/">Home</a>
+                    </li>
+                    <li class="active">Contatti</li>
+                </ol>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Content Row -->
+        <div class="row">
+            <!-- Contact Form -->
+
+              <div class="col-md-8">
+                  <h3>Invia un messaggio</h3>
+                  <%= form_for(@contact) do |f| %>
+                  <%= render 'shared/error_messages', object: f.object %>
+                      <div class="control-group form-group">
+                          <div class="controls">
+                              <%= f.label :name, "Nome *" %>
+                              <%= f.text_field :name, class:"form-control" %>
+                              <p class="help-block"></p>
+                          </div>
+                      </div>
+                      <div class="control-group form-group">
+                          <div class="controls">
+                              <%= f.label :surname, "Cognome *" %>
+                              <%= f.text_field :surname, class:"form-control" %>
+                              <p class="help-block"></p>
+                          </div>
+                      </div>
+
+                      <div class="control-group form-group">
+                          <div class="controls">
+                              <%= f.label :object, "Oggetto *" %>
+                              <%= f.text_field :object, class:"form-control" %>
+                              <p class="help-block"></p>
+                          </div>
+                      </div>
+                      <div class="control-group form-group">
+                          <div class="controls">
+                            <%= f.label :email, "Email *" %>
+                            <%= f.text_field :email, class:"form-control" %>
+                          </div>
+                      </div>
+                      <div class="control-group form-group">
+                          <div class="controls">
+                            <%= f.label :message, "Messaggio *" %>
+                            <%= f.text_area :message, class:"form-control", rows:"10", cols:"100" %>
+                          </div>
+                      </div>
+                      <!-- For success/fail messages -->
+                      <%= f.submit "INVIA", class:"btn btn-primary"%>
+                  <%end%>
+              </div>
+
+
+            <!-- Contact Details Column -->
+            <div class="col-md-4">
+                <h3>Dettagli Contatti</h3>
+                <p>
+                    Gioiosa Marea, 98063 ME<br>
+                </p>
+                <p><i class="fa fa-phone"></i>
+                    <abbr title="Phone">P</abbr>: 328 8898256</p>
+                <p><i class="fa fa-envelope-o"></i>
+                    <abbr title="Email">E</abbr>: <a href="mailto:cfp@smartgioiosa.it">cfp@smartgioiosa.it</a>
+                </p>
+
+                <ul class="list-unstyled list-inline list-social-icons">
+                    <li>
+                        <a href="https://www.facebook.com/SmartGioiosa/"><i class="fa fa-facebook-square fa-2x"></i></a>
+                    </li>
+                    <li>
+
+                        <a href="https://twitter.com/SmartGioiosa"><i class="fa fa-twitter-square fa-2x"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://plus.google.com/116848179994267593028"><i class="fa fa-google-plus-square fa-2x"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://www.youtube.com/channel/UCzjBDb3oMsUVi9azPrxSbxg"><i class="fa fa-youtube-square fa-2x"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /.row -->
+
+
+
+        <hr>
