@@ -12,27 +12,27 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %>
+    <%= f.label :title, 'Titolo' %>
     <%= f.text_field :title, class:"form-control" %>
   </div>
 
 
   <fieldset>
-      <legend>Referent</legend>
+      <legend>Referente</legend>
       <div class="col-sm-8">
     <%= f.fields_for :referent, @proposal.referent do |ff| %>
       <div>
-        <%= ff.label :name %>
+        <%= ff.label :name, 'Nome' %>
         <%= ff.text_field :name, class:"form-control"%>
       </div>
 
       <div>
-        <%= ff.label :surname %>
+        <%= ff.label :surname, 'Cognome' %>
         <%= ff.text_field :surname, class:"form-control" %>
       </div>
 
       <div>
-        <%= ff.label :email %>
+        <%= ff.label :email, 'Email' %>
         <%= ff.text_field :email, class:"form-control" %>
       </div>
     <% end %>
@@ -41,7 +41,7 @@
 
 
   <div class="field">
-    <%= f.label :team_name %>
+    <%= f.label :team_name, 'Nome Team' %>
     <%= f.text_field :team_name, class:"form-control" %>
   </div><br>
 
@@ -49,7 +49,7 @@
   <%= f.fields_for :members do |builder| %>
     <%= render 'member_fields', f: builder %>
   <% end %>
-  <%= link_to_add_fields "Add Member", f, :members %>
+  <%= link_to_add_fields "Aggiungi  Membri", f, :members %>
   <br>
 
   <fieldset>
@@ -84,13 +84,43 @@
     <%= f.label :detailed_description, 'Descrizione dettagliata' %><br>
     <%= f.text_area :detailed_description, class:"form-control" %>
   </div>
+</fieldset>
+
+
+
 <fieldset>
+  <legend>FONDI NECESSARI</legend>
+  <label> Una stima approsimativa del finanziamento da richiedere per realizzare la proposta progettuale, che includa: stima del lavoro necessario e delle risorse umane (quantità di tempo e relativo costo) da impiegare nel progetto, attrezzature, forniture e quanto ritenuto necessario ai fini della realizzazione concreta dell'intero progetto</label><br>
+  <%= link_to 'FONDI NECESSARI', '/assets/fondi_necessari.xlsx',  download: ''%>
+
+<!-- LINK DOWNLOAD-->
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <div class="form-group">
+        <%= f.label :file, "File" %>
+        <%= f.file_field :file %>
+      </div>
+    </div>
+  </div>
+
+  <% if @proposal.file.present? %>
+    <p>FILE CARICATO:<%= link_to @proposal.file_identifier, @proposal.file.url%></p>
+  <%end%>
+</fieldset>
+
+<fieldset>
+  <legend>ALLEGATI PROGETTO</legend>
+  <label>Eventuali tavole progettuali (max 2 formato A1 - Orientamento verticale) o altri allegati vanno inoltrate tramite Wetransfer al seguente indirizzo Email: cfp@smartgioiosa.it inserendo come oggetto "CFP SMARTGIOIOSA - Titolo Progetto"</label>
+  <br>
+<label><%= f.check_box :attachments %>ALLEGATI</label><br>
+<p class="help-block">Se inviate degli allegati spuntare questa casella altrimenti non verranno presi in considerazione.</p>
+
+</fieldset>
+
 
 
 <label><%= f.check_box :privacy %>PRIVACY</label><br>
-<label><%= f.check_box :attachments %>ALLEGATI</label><br>
-
-
 
 
   <div class="actions">
