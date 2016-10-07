@@ -70,6 +70,6 @@ class ProposalsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def proposal_params
-      params.require(:proposal).permit(:title, :description, :category_id, members_attributes:[:proposal_id, :name, :surname, :profession, :_destroy, :id], referent_attributes:[:proposal_id, :name, :surname, :email, :id])
+      params.require(:proposal).permit(:title, :description, :category_id, :team_name, :privacy, :attachments, :answer1, :answer2, :detailed_description, members_attributes:[:proposal_id, :name, :surname, :profession, :_destroy, :id], referent_attributes:[:proposal_id, :name, :surname, :email, :id])
     end
 end

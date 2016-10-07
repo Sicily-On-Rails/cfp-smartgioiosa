@@ -13,34 +13,37 @@
 
   <div class="field">
     <%= f.label :title %>
-    <%= f.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= f.label :description %>
-    <%= f.text_field :description %>
+    <%= f.text_field :title, class:"form-control" %>
   </div>
 
 
   <fieldset>
-    <legend>Referent</legend>
-  <%= f.fields_for :referent, @proposal.referent do |ff| %>
-  <div>
-    <%= ff.label :name %>
-    <%= ff.text_field :name %>
-  </div>
+      <legend>Referent</legend>
+      <div class="col-sm-8">
+    <%= f.fields_for :referent, @proposal.referent do |ff| %>
+      <div>
+        <%= ff.label :name %>
+        <%= ff.text_field :name, class:"form-control"%>
+      </div>
 
-  <div>
-    <%= ff.label :surname %>
-    <%= ff.text_field :surname %>
-  </div>
+      <div>
+        <%= ff.label :surname %>
+        <%= ff.text_field :surname, class:"form-control" %>
+      </div>
 
-  <div>
-    <%= ff.label :email %>
-    <%= ff.text_field :email %>
+      <div>
+        <%= ff.label :email %>
+        <%= ff.text_field :email, class:"form-control" %>
+      </div>
+    <% end %>
   </div>
-<% end %>
-</fieldset>
+  </fieldset>
+
+
+  <div class="field">
+    <%= f.label :team_name %>
+    <%= f.text_field :team_name, class:"form-control" %>
+  </div><br>
 
 
   <%= f.fields_for :members do |builder| %>
@@ -48,10 +51,46 @@
   <% end %>
   <%= link_to_add_fields "Add Member", f, :members %>
   <br>
+
   <fieldset>
     <legend>Area Tematica</legend>
   <%= f.collection_radio_buttons :category_id, Category.all, :id, :name %>
 </fieldset>
+
+<fieldset>
+  <legend>ABSTRACT DEL PROGETTO</legend>
+  <div class="field">
+    <%= f.label :description, 'Breve sintesi della proposta presentata, delle finalità, dei suoi obiettivi e dei risultati attesi(max 700 caratteri, spazi esclusi)' %><br>
+    <%= f.text_area :description, class:"form-control" %>
+  </div>
+</fieldset>
+
+<fieldset>
+  <legend>IMPATTO DEL PROGETTO</legend>
+  <div class="field">
+    <%= f.label :answer1, "1. In che modo l'attività proposta può avere un impatto positivo nell'ambito delle smart cities?" %><br>
+    <%= f.text_area :answer1, class:"form-control"%>
+  </div>
+
+  <div class="field">
+    <%= f.label :answer2, '2. Quale problema o sfida si spera di risolvere con la presente proposta progettuale?' %><br>
+    <%= f.text_area :answer2, class:"form-control" %>
+  </div>
+</fieldset>
+
+<fieldset>
+  <legend>DESCRIZIONE DETTAGLIATA DEL PROGETTO</legend>
+  <div class="field">
+    <%= f.label :detailed_description %><br>
+    <%= f.text_area :detailed_description, class:"form-control" %>
+  </div>
+<fieldset>
+
+
+<label><%= f.check_box :privacy %>PRIVACY</label><br>
+<label><%= f.check_box :attachments %>ALLEGATI</label><br>
+
+
 
 
   <div class="actions">
