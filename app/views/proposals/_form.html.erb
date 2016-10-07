@@ -47,6 +47,11 @@
     <%= render 'member_fields', f: builder %>
   <% end %>
   <%= link_to_add_fields "Add Member", f, :members %>
+  <br>
+  <fieldset>
+    <legend>Area Tematica</legend>
+  <%= f.collection_radio_buttons :category_id, Category.all, :id, :name %>
+</fieldset>
 
 
   <div class="actions">
