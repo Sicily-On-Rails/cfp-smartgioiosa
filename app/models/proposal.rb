@@ -15,4 +15,5 @@ class Proposal < ApplicationRecord
 
   mount_uploader :file, FileUploader
   store_in_background :file
+  belongs_to :user
 end
