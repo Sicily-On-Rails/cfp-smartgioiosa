@@ -47,6 +47,10 @@ end
 gem 'devise'
 gem 'bootstrap-sass'
 gem 'font-awesome-rails'
+gem 'carrierwave'
+gem 'delayed_job_active_record'
+gem 'carrierwave_backgrounder'
+gem 'daemons'
 group :production do
   gem 'pg'
 end

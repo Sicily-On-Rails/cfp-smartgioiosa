@@ -12,4 +12,7 @@ class Proposal < ApplicationRecord
   validates :detailed_description, presence: true
   validates :description, presence: true
   validates :privacy, presence: true
+
+  mount_uploader :file, FileUploader
+  store_in_background :file
 end
