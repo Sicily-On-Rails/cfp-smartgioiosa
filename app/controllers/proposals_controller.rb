@@ -15,6 +15,7 @@ class ProposalsController < ApplicationController
   # GET /proposals/new
   def new
     @proposal = Proposal.new
+    @proposal.build_referent
   end
 
   # GET /proposals/1/edit
@@ -69,6 +70,6 @@ class ProposalsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def proposal_params
-      params.require(:proposal).permit(:title, :description)
+      params.require(:proposal).permit(:title, :description, members_attributes:[:proposal_id, :name, :surname, :profession, :_destroy, :id], referent_attributes:[:proposal_id, :name, :surname, :email, :id])
     end
 end

@@ -21,6 +21,34 @@
     <%= f.text_field :description %>
   </div>
 
+
+  <fieldset>
+    <legend>Referent</legend>
+  <%= f.fields_for :referent, @proposal.referent do |ff| %>
+  <div>
+    <%= ff.label :name %>
+    <%= ff.text_field :name %>
+  </div>
+
+  <div>
+    <%= ff.label :surname %>
+    <%= ff.text_field :surname %>
+  </div>
+
+  <div>
+    <%= ff.label :email %>
+    <%= ff.text_field :email %>
+  </div>
+<% end %>
+</fieldset>
+
+
+  <%= f.fields_for :members do |builder| %>
+    <%= render 'member_fields', f: builder %>
+  <% end %>
+  <%= link_to_add_fields "Add Member", f, :members %>
+
+
   <div class="actions">
     <%= f.submit %>
   </div>

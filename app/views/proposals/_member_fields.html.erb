@@ -1,0 +1,15 @@
+<fieldset>
+  <legend>Members</legend>
+  <%= f.label :name, "Nome" %>
+  <%= f.text_field :name %>
+
+  <%= f.label :surname, "Cognome" %>
+  <%= f.text_field :name %>
+
+  <%= f.label :profession, "Professione" %>
+  <%= f.text_field :profession %>
+
+  <%= f.hidden_field :_destroy %>
+
+  <%= link_to "remove", '#', class: "remove_fields" %>
+</fieldset>

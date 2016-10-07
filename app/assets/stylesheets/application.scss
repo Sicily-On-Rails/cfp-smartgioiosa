@@ -1,6 +1,21 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
+
+form > fieldset {
+  border: none;
+  border: solid 1px #CCC;
+  padding: 10px 15px;
+  margin: 15px 0;
+  fieldset {
+    border: none;
+    margin: 0;
+    margin: 10px 0;
+    padding: 0;
+  }
+}
+
 /* Global Styles */
 
 html,
@@ -102,9 +117,9 @@ footer {
 
 .btn-blu {
   color: rgb(1,2,252);
-  border-color: rgb(1,2,252);  
+  border-color: rgb(1,2,252);
 }
-.btn-blu:hover { 
+.btn-blu:hover {
   background-color: rgb(1,2,252);
   color: #fff;
 }
@@ -121,9 +136,9 @@ footer {
 
 .btn-viola {
   color: rgb(75,0,142);
-  border-color: rgb(75,0,142);  
+  border-color: rgb(75,0,142);
 }
-.btn-viola:hover { 
+.btn-viola:hover {
   background-color: rgb(75,0,142);
   color: #fff;
 }
@@ -135,4 +150,3 @@ footer {
   background-color: rgb(144,2,210);
   color: #fff;
 }
-
