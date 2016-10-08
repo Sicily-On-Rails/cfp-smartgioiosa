@@ -1,8 +1,8 @@
 class Proposal < ApplicationRecord
-  has_one :referent
+  has_one :referent,  dependent: :destroy
   accepts_nested_attributes_for :referent, allow_destroy: true
 
-  has_many :members
+  has_many :members, dependent: :destroy
   accepts_nested_attributes_for :members, allow_destroy: true
   validates :title, presence: true
   validates :team_name, presence: true
@@ -16,4 +16,5 @@ class Proposal < ApplicationRecord
   mount_uploader :file, FileUploader
   store_in_background :file
   belongs_to :user
+  belongs_to :category
 end

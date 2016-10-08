@@ -1,14 +1,106 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
+<h2>
+  TITOLO:
   <%= @proposal.title %>
-</p>
+</h2>
+<fieldset>
+    <legend>REFERENTE</legend>
+    <p>
+      <strong>Nome:</strong>
+    <%= @proposal.referent.name%>
+    </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @proposal.description %>
-</p>
 
-<%= link_to 'Edit', edit_proposal_path(@proposal) %> |
-<%= link_to 'Back', proposals_path %>
+    <p>
+      <strong>Cognome:</strong>
+    <%= @proposal.referent.surname%>
+    </p>
+
+
+    <p>
+      <strong>Email:</strong>
+      <%= @proposal.referent.email%>
+    </p>
+</fieldset>
+
+<fieldset>
+    <legend>MEMBRI</legend>
+
+    <p>
+      <strong>Nome Team:</strong>
+      <%= @proposal.team_name%>
+    </p>
+    <% @proposal.members.each do |m|%>
+    <p>
+      <strong>Nome:</strong>
+      <%= m.name %>
+    </p>
+
+    <p>
+      <strong>Cognome:</strong>
+      <%= m.name %>
+    </p>
+    <p>
+      <strong>Professione:</strong>
+      <%= m.profession %>
+    </p>
+    <hr>
+<%end%>
+<fieldset>
+
+  <fieldset>
+    <legend>AREA TEMATICA</legend>
+    <p>
+      <%= @proposal.category.name %>
+    </p>
+  </fieldset>
+
+  <fieldset>
+    <legend>ABSTRACT DEL PROGETTO</legend>
+      <p>
+        <strong>Breve sintesi della proposta presentata, delle finalità, dei suoi obiettivi e dei risultati attesi(max 700 caratteri, spazi esclusi)</strong><br>
+        <%= @proposal.description %>
+      </p>
+  </fieldset>
+
+  <fieldset>
+    <legend>IMPATTO DEL PROGETTO</legend>
+    <p><strong>1. In che modo l'attività proposta può avere un impatto positivo nell'ambito delle smart cities?</strong><br>
+      <%=@proposal.answer1 %>
+    </p>
+
+    <p>
+      <strong>2. Quale problema o sfida si spera di risolvere con la presente proposta progettuale? </strong><br>
+      <%= @proposal.answer2 %>
+    </p>
+  </fieldset>
+
+  <fieldset>
+    <legend>DESCRIZIONE DETTAGLIATA DEL PROGETTO</legend>
+    <p>
+      <strong> Descrizione dettagliata </strong><br>
+      <%= @proposal.detailed_description %>
+    </p>
+  </fieldset>
+  <fieldset>
+    <legend>FONDI NECESSARI</legend>
+    <label> Una stima approsimativa del finanziamento da richiedere per realizzare la proposta progettuale, che includa: stima del lavoro necessario e delle risorse umane (quantità di tempo e relativo costo) da impiegare nel progetto, attrezzature, forniture e quanto ritenuto necessario ai fini della realizzazione concreta dell'intero progetto</label><br>
+  <!-- LINK DOWNLOAD-->
+
+    <% if @proposal.file.present? %>
+      <p>FILE CARICATO:<%= link_to @proposal.file_identifier, @proposal.file.url%></p>
+      <%else%>
+      <p>Nessun file inviato</p>
+    <%end%>
+  </fieldset>
+  <hr>
+
+<p>PRIVACY: <%= check_box "privacy", "proposal", {checked: @proposal.privacy, disabled: true} %></p>
+<p>ALLEGATI: <%= check_box "attachments", "proposal", {checked: @proposal.attachments, disabled: true} %></p>
+
+
+
+
+
+<%= link_to 'Back', users_show_proposals_path %>
