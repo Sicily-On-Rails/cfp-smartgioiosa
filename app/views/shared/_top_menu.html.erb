@@ -15,7 +15,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="#">REGOLAMENTO</a>
+                        <%= link_to 'REGOLAMENTO', '/assets/regolamento.pdf'%>
                     </li>
                       <li class="<%= "active" if current_page?("/proposals/new") %>">
                         <%= link_to "INSERISCI PROPOSTA", new_proposal_path%></a>
