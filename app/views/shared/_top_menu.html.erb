@@ -17,11 +17,10 @@
                     <li>
                         <a href="#">REGOLAMENTO</a>
                     </li>
-                    <% if user_signed_in? %>
                       <li class="<%= "active" if current_page?("/proposals/new") %>">
                         <%= link_to "INSERISCI PROPOSTA", new_proposal_path%></a>
                       </li>
-                    <% end %>
+
 
                     <li class="<%= "active" if current_page?("/contatti") %>">
                       <%= link_to "CONTATTI", contatti_path%>

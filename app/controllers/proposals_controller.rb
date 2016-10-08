@@ -9,8 +9,12 @@ class ProposalsController < ApplicationController
 
   # GET /proposals/new
   def new
-    @proposal = @user.proposals.new
-    @proposal.build_referent
+    if @user.nil?
+      redirect_to new_user_registration_path, notice: 'Per inserire la tua idea devi prima registrarti.'
+    else
+      @proposal = @user.proposals.new
+      @proposal.build_referent
+  end
   end
 
 

@@ -1,4 +1,5 @@
 class CategoriesController < ApplicationController
+  before_action :authorize_admin!
   before_action :set_category, only: [:show, :edit, :update, :destroy]
 
   # GET /categories
@@ -62,6 +63,12 @@ class CategoriesController < ApplicationController
   end
 
   private
+    def authorize_admin!
+      authenticate_user!
+      unless current_user.admin?
+        redirect_to root_path, alert: "You must be an admin to do that."
+      end
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_category
       @category = Category.find(params[:id])

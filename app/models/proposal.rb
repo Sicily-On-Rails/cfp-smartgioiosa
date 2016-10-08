@@ -17,4 +17,5 @@ class Proposal < ApplicationRecord
   store_in_background :file
   belongs_to :user
   belongs_to :category
+  validates_associated :user, :message => "You have already too much proposal."
 end

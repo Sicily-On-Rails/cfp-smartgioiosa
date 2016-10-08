@@ -83,17 +83,16 @@
       <%= @proposal.detailed_description %>
     </p>
   </fieldset>
-  <fieldset>
+  <!--<fieldset>
     <legend>FONDI NECESSARI</legend>
     <label> Una stima approsimativa del finanziamento da richiedere per realizzare la proposta progettuale, che includa: stima del lavoro necessario e delle risorse umane (quantità di tempo e relativo costo) da impiegare nel progetto, attrezzature, forniture e quanto ritenuto necessario ai fini della realizzazione concreta dell'intero progetto</label><br>
-  <!-- LINK DOWNLOAD-->
 
-    <% if @proposal.file.present? %>
-      <p>FILE CARICATO:<%= link_to @proposal.file_identifier, @proposal.file.url%></p>
-      <%else%>
+    <#% if @proposal.file.present? %>
+      <p>FILE CARICATO:<#%= link_to @proposal.file_identifier, @proposal.file.url%></p>
+      <#%else%>
       <p>Nessun file inviato</p>
-    <%end%>
-  </fieldset>
+    <#%end%>
+  </fieldset>-->
   <hr>
 
 <p>PRIVACY: <%= check_box "privacy", "proposal", {checked: @proposal.privacy, disabled: true} %></p>
