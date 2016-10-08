@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'users/show_proposals'
+
   resources :categories
   devise_for :users
   resources :proposals
