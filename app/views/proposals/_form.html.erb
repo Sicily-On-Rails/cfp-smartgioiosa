@@ -1,13 +1,11 @@
 <%= form_for(proposal) do |f| %>
   <% if proposal.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(proposal.errors.count, "error") %> prohibited this proposal from being saved:</h2>
-
-      <ul>
-      <% proposal.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+      <%if proposal.errors.count > 1%>
+      <h2><%= pluralize(proposal.errors.count, "errori") %> impediscono il salvataggio:</h2>
+      <%else%>
+      <h2>1 errore impedisce il salvataggio:</h2>
+      <%end%>
     </div>
   <% end %>
 

@@ -14,7 +14,7 @@
   padding-left: 15px;
 }
 
-header {
+/*header {
   @extend .page-header;
   position: relative;
   padding-bottom: 0px;
@@ -22,7 +22,7 @@ header {
   &:first-child {
     margin-top: 20px;
   }
-}
+}*/
 
 ul.actions {
   @extend .list-unstyled;
