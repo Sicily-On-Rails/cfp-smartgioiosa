@@ -51,6 +51,7 @@ gem 'carrierwave'
 gem 'delayed_job_active_record'
 gem 'carrierwave_backgrounder'
 gem 'daemons'
+gem 'simple_form'
 group :production do
   gem 'pg'
 end
