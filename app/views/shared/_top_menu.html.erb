@@ -9,36 +9,47 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/">CFP - Smart Gioiosa</a>
+                <a class="navbar-brand" href="/">CFP - SMART GIOIOSA</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="#">Regolamento</a>
+                        <a href="#">REGOLAMENTO</a>
                     </li>
                     <% if user_signed_in? %>
                       <li class="<%= "active" if current_page?("/proposals/new") %>">
-                        <%= link_to "Inserisci Proposta", new_proposal_path %></a>
+                        <%= link_to "INSERISCI PROPOSTA", new_proposal_path%></a>
                       </li>
                     <% end %>
 
                     <li class="<%= "active" if current_page?("/contatti") %>">
-                      <%= link_to "Contatti", contatti_path%>
+                      <%= link_to "CONTATTI", contatti_path%>
                     </li>
                   <% unless user_signed_in? %>
                       <li class="<%= "active" if current_page?("/users/sign_up") %>">
-                        <%= link_to "Registrati", new_user_registration_path %>
+                        <%= link_to "REGISTRATI", new_user_registration_path %>
                       </li>
                       <li class="<%= "active" if current_page?("/users/sign_in") %>">
-                        <%= link_to "Login", new_user_session_path %>
+                        <%= link_to "LOGIN", new_user_session_path %>
                       </li>
                     <% end %>
 
                     <% if user_signed_in? %>
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.email%> <b class="caret"></b></a>
+                      <ul class="dropdown-menu">
+                          <li>
+                              <a href="#">PROFILO</a>
+                          </li>
+                          <li>
+                              <a href="#">PROPOSTE</a>
+                          </li>
+                      </ul>
+                  </li>
 
-                      <li> <%= link_to current_user.email, "#" %></li>
-                      <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+
+                      <li><%= link_to "SIGN OUT", destroy_user_session_path, method: :delete %></li>
                     <% end %>
 
                   </ul>
