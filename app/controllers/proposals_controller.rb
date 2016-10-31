@@ -14,6 +14,7 @@ class ProposalsController < ApplicationController
     else
       @proposal = @user.proposals.new
       @proposal.build_referent
+      @proposal.members.build
   end
   end
 

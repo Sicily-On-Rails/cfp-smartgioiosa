@@ -6,6 +6,11 @@
       <%else%>
       <h2>1 errore impedisce il salvataggio:</h2>
       <%end%>
+      <ul>
+      <% proposal.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
     </div>
   <% end %>
 
