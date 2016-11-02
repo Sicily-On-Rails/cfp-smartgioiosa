@@ -1,11 +1,11 @@
 class ProposalsController < ApplicationController
   before_action :set_user
-  before_action :set_proposal, only: [:show, :edit, :update, :destroy]
+  before_action :set_proposal, only: [:edit, :update, :destroy]
 
   # GET /proposals/1
   # GET /proposals/1.json
-  def show
-  end
+  #def show
+  #end
 
   # GET /proposals/new
   def new
@@ -26,7 +26,7 @@ class ProposalsController < ApplicationController
 
     respond_to do |format|
       if @proposal.save
-        format.html { redirect_to @proposal, notice: 'Proposta inseritta correttamente.' }
+        format.html { redirect_to root_path, notice: 'Proposta inseritta correttamente.' }
         format.json { render :show, status: :created, location: @proposal }
       else
         format.html { render :new }
