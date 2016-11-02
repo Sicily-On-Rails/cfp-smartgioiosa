@@ -18,10 +18,10 @@ class Proposal < ApplicationRecord
   store_in_background :file
   belongs_to :user
   belongs_to :category
-  validates_associated :user, :message => "You have already too much proposal."
+
 
   validate :at_least_one_contacts_team
-
+  #validates_associated :user, :message => "You have already too much proposal."
   private
   def at_least_one_contacts_team
     # when creating a new contact: making sure at least one team exists
