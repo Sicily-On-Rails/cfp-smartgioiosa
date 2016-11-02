@@ -16,7 +16,7 @@
   <tbody>
     <% @proposals.each do |proposal| %>
       <tr>
-        <td><%= link_to proposal.title, proposal_path(proposal) %></td>
+        <td><%= proposal.title%></td>
         <td><%= proposal.category.name %></td>
       </tr>
     <% end %>
