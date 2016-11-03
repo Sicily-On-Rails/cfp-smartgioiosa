@@ -10,14 +10,16 @@
     <tr>
       <th>Titolo</th>
       <th>Tematica</th>
+      <th>Data Inserimento</th>
       <th colspan="3"></th>
     </tr>
   </thead>
   <tbody>
     <% @proposals.each do |proposal| %>
       <tr>
-        <td><%= proposal.title%></td>
+        <td><%=link_to proposal.title, proposal_path(proposal)%></td>
         <td><%= proposal.category.name %></td>
+        <td><%= proposal.created_at.strftime("%d/%m/%Y %H:%M") %></td>
       </tr>
     <% end %>
   </tbody>
