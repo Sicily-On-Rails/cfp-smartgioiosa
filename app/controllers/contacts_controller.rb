@@ -7,7 +7,7 @@ def create
   @contact = Contact.new(contact_params)
   #@contact.request = request
   if @contact.save
-    ContactMailer.new_contact_message(@contact).deliver_now
+    ContactMailer.new_contact_message(@contact).deliver_later
     flash[:success] = 'Grazie per il tuo messaggio'
     redirect_to contatti_path
   else

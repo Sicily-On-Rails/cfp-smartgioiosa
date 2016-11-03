@@ -27,7 +27,7 @@ class ProposalsController < ApplicationController
 
     respond_to do |format|
       if @proposal.save
-        ProposalMailer.new_proposal_message(@proposal).deliver_now
+        ProposalMailer.new_proposal_message(@proposal).deliver_later
         format.html { redirect_to root_path, notice: 'Proposta inserita correttamente.' }
         format.json { render :show, status: :created, location: @proposal }
       else
