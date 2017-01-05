@@ -35,8 +35,13 @@
     </div>
 <% end %>
     <%= render partial: "shared/top_menu"%>
+    <%if controller.controller_name == "faqs"%>
+        <%= render partial: "shared/slider_faq"%>
 
-    <%= render partial: "shared/slider"%>
+    <%else%>
+      <%= render partial: "shared/slider"%>
+    <%end%>
+
     <div class="container">
       <%= yield %>
 

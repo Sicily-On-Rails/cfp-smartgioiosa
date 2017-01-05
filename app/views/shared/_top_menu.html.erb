@@ -23,8 +23,10 @@
                       <li class="<%= "active" if current_page?("/alerts") %>">
                         <%= link_to "AVVISI", alerts_path%></a>
                       </li>
-
-
+                      <li class="<%= "active" if controller.controller_name =="faqs" %>">
+                        <%= link_to "FAQs",faqs_index_path%></a>
+                      </li>
+                      
                     <li class="<%= "active" if current_page?("/contatti") %>">
                       <%= link_to "CONTATTI", contatti_path%>
                     </li>

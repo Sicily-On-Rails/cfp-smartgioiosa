@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'faqs/index'
+
   #get 'alerts/index'
 
   namespace :admin do
