@@ -84,7 +84,7 @@
 <fieldset>
   <legend>DESCRIZIONE DETTAGLIATA DEL PROGETTO</legend>
   <div class="field">
-    <%= f.label :detailed_description, 'Descrizione dettagliata' %><br>
+    <%= f.label :detailed_description, 'Descrizione dettagliata (max 4000 caratteri, spazi esclusi)' %><br>
     <%= f.text_area :detailed_description, class:"form-control" %>
   </div>
 </fieldset>
@@ -113,7 +113,7 @@
 
 <fieldset>
   <legend>ALLEGATI PROGETTO</legend>
-  <label>Eventuali tavole progettuali (max 2 formato A1 - Orientamento verticale) o altri allegati vanno inoltrate tramite Wetransfer al seguente indirizzo Email: cfp@smartgioiosa.it inserendo come oggetto "CFP SMARTGIOIOSA - Titolo Progetto"</label>
+  <label>Eventuali tavole progettuali (max 2 formato A1 - Orientamento verticale) o altri allegati vanno inoltrate tramite Wetransfer in formato PDF al seguente indirizzo Email: cfp@smartgioiosa.it inserendo come oggetto "CFP SMARTGIOIOSA - Titolo Progetto"</label>
   <br>
 <label><%= f.check_box :attachments %>ALLEGATI</label><br>
 <p class="help-block">Se inviate degli allegati spuntare questa casella altrimenti non verranno presi in considerazione.</p>
