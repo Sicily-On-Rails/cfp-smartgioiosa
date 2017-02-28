@@ -17,9 +17,11 @@
                     <li>
                         <%= link_to 'REGOLAMENTO', '/assets/regolamento.pdf'%>
                     </li>
-                      <li class="<%= "active" if current_page?("/proposals/new") %>">
-                        <%= link_to "INSERISCI PROPOSTA", new_proposal_path%></a>
+                      <!--
+                      <li class="<#%= "active" if current_page?("/proposals/new") %>">
+                        <#%= link_to "INSERISCI PROPOSTA", new_proposal_path%></a>
                       </li>
+                      -->
                       <li class="<%= "active" if current_page?("/alerts") %>">
                         <%= link_to "AVVISI", alerts_path%></a>
                       </li>

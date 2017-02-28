@@ -10,6 +10,7 @@ class ProposalsController < ApplicationController
 
   # GET /proposals/new
   def new
+=begin
     if @user.nil?
       redirect_to new_user_registration_path, notice: 'Per inserire la tua idea devi prima registrarti.'
     else
@@ -17,12 +18,14 @@ class ProposalsController < ApplicationController
       @proposal.build_referent
       @proposal.members.build
   end
+=end
   end
 
 
   # POST /proposals
   # POST /proposals.json
-  def create
+=begin  
+def create
     @proposal = @user.proposals.new(proposal_params)
 
     respond_to do |format|
@@ -36,7 +39,7 @@ class ProposalsController < ApplicationController
       end
     end
   end
-
+=end
 
   private
     # Use callbacks to share common setup or constraints between actions.
