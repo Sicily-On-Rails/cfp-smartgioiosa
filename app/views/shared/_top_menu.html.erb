@@ -28,7 +28,7 @@
                       <li class="<%= "active" if controller.controller_name =="faqs" %>">
                         <%= link_to "FAQs",faqs_index_path%></a>
                       </li>
-                      
+
                     <li class="<%= "active" if current_page?("/contatti") %>">
                       <%= link_to "CONTATTI", contatti_path%>
                     </li>
@@ -42,6 +42,9 @@
                     <% end %>
 
                     <% if user_signed_in? %>
+                    <%if current_user.admin?%>
+                    <li><%= link_to "ADMIN", admin_path %></li>
+                    <%end%>
                     <li class="dropdown">
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.email%> <b class="caret"></b></a>
                       <ul class="dropdown-menu">
