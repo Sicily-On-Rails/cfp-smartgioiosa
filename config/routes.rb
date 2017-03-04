@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   #get 'alerts/index'
 
   namespace :admin do
-    get 'application/index'
+    get '', to: 'application#index', as:'/'
+    resources :proposals
   end
 
   get 'users/show_proposals'
