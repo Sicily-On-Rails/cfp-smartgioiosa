@@ -22,7 +22,10 @@ doc/
 /public/uploads/*
 /config/secrets.yml
 /config/local_env.yml
-# Ignore Byebug command history file.
+
+/node_modules
+/yarn-error.log
+
 .byebug_history
 
 *.swp
