@@ -1,4 +1,4 @@
-class CreateReferents < ActiveRecord::Migration[5.0]
+class CreateReferents < ActiveRecord::Migration[5.2]
   def change
     create_table :referents do |t|
       t.string :name

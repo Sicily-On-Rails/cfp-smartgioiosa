@@ -1,4 +1,4 @@
-class AddColumnToProposal < ActiveRecord::Migration[5.0]
+class AddColumnToProposal < ActiveRecord::Migration[5.2]
   def change
     add_column :proposals, :privacy, :boolean
     add_column :proposals, :attachments, :boolean
